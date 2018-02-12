@@ -37,11 +37,7 @@ $icons: (
 // icon should only be extended one or two other places, we'll roll with it.
 @each $name, $content in $icons {
   .vjs-icon-#{$name} {
-    font-family: $icon-font-family;
-    font-weight: normal;
-    font-style: normal;
-
-    &:before {
+    .vjs-icon-placeholder:before {
       content: $content;
     }
   }
@@ -49,17 +45,15 @@ $icons: (
 
 .video-js .vjs-chromecast-button {
   cursor: pointer;
+  .vjs-icon-placeholder {
+    font-family: $icon-font-family;
+    font-weight: 400;
+    font-style: normal;
+  }
 }
 
 .video-js .vjs-chromecast-button {
-
-  font-size: 0.7em;
-
   @extend .vjs-icon-chromecast;
-
-  &:before {
-    line-height: 2.3;
-  }
 
   &.connected {
     color: #66A8CC;
