@@ -84,7 +84,7 @@ class Chromecast extends Tech {
     }
 
     createEl () {
-        let el = videojs.createEl('div', {
+        let el = videojs.dom.createEl('div', {
             id: this.options_.techId,
             className: 'vjs-tech vjs-tech-chromecast'
         });

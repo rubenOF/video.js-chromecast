@@ -225,11 +225,14 @@ var ChromeCastButton = (function (_Button) {
                     track.customData = null;
                     tracks.push(track);
                 }
+                // Update the font to a more generic ux ( Used netflix as example )
                 mediaInfo.textTrackStyle = new chrome.cast.media.TextTrackStyle();
+                mediaInfo.textTrackStyle.fontFamily = 'Arial';
                 mediaInfo.textTrackStyle.foregroundColor = '#FFFFFF';
-                mediaInfo.textTrackStyle.backgroundColor = '#00000060';
+                mediaInfo.textTrackStyle.backgroundColor = '#00000000';
+                mediaInfo.textTrackStyle.fontScale = '1.1';
+                mediaInfo.textTrackStyle.edgeColor = '#00000099';
                 mediaInfo.textTrackStyle.edgeType = chrome.cast.media.TextTrackEdgeType.DROP_SHADOW;
-                mediaInfo.textTrackStyle.windowType = chrome.cast.media.TextTrackWindowType.ROUNDED_CORNERS;
             }
             // Load/Add audio tracks
 
@@ -484,7 +487,7 @@ var Chromecast = (function (_Tech) {
     _createClass(Chromecast, [{
         key: 'createEl',
         value: function createEl() {
-            var el = _videoJs2['default'].createEl('div', {
+            var el = _videoJs2['default'].dom.createEl('div', {
                 id: this.options_.techId,
                 className: 'vjs-tech vjs-tech-chromecast'
             });
